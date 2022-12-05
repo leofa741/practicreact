@@ -3,6 +3,7 @@ import { BrowserRouter ,  Navigate,  NavLink,  Route, Routes } from 'react-route
 
 import { Home } from '../pages/Home'
 import { Navbar } from '../components/Navbar';
+import { CarrouselComponent } from '../ui/carrousel/CarrouselComponent';
 
 
 export const Navigation = () => {
@@ -11,7 +12,7 @@ export const Navigation = () => {
     <BrowserRouter>
    
        <Navbar  />
-
+<CarrouselComponent />
         <Routes >
             <Route path="/"  element={<Home />  } />
             <Route path="/home"   element={<Home /> } />

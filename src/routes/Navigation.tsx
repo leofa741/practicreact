@@ -1,6 +1,7 @@
 import React from 'react'
-import { BrowserRouter ,  NavLink,  Route, Routes } from 'react-router-dom'
+import { BrowserRouter ,  Navigate,  NavLink,  Route, Routes } from 'react-router-dom'
 import logo from '../assets/img/logo192.png'
+import { Home } from '../pages/Home'
 
 
 export const Navigation = () => {
@@ -9,11 +10,10 @@ export const Navigation = () => {
     <BrowserRouter>
       <div className="main-layout">
         <nav>
-            <img src={logo} alt="logo" />
-       
+            <img src={logo} alt="logo" />       
          <ul>
             <li>
-                <NavLink to="/" >Home</NavLink>
+                <NavLink to="/"  >Home</NavLink>
             </li>
             <li>
                 <NavLink to="/home" >Home</NavLink>
@@ -28,27 +28,15 @@ export const Navigation = () => {
         </nav>
 
         <Routes >
-            <Route path="/" element={<h1>home</h1>} />
-            <Route path="/home" element={<h1>home</h1>} />
+            <Route path="/" element={<Home />  } />
+            <Route path="/home" element={<Home /> } />
             <Route path="/about" element={<h1>about</h1>} />
-            <Route path="/contact" element={<h1>contact</h1>} />
+            <Route path="/contact" element={<h1>contact</h1>} />      
 
-
-
-
-
-            
+            <Route path="/*" element={<Navigate to="/home" replace />} />      
         </Routes>
-
-
-
-
-
-
         </div>
-
     </BrowserRouter>
- 
  
  </>
   )
